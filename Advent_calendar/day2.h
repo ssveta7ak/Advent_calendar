@@ -9,10 +9,11 @@ class Submarine
 {
 public:
     void read_input();
-private:
-    int horizontal = 0;
-    int depth = 0;
-    std::string move;
-    int step;
+    void move(std::string direction, int step);
+    int get_multiplication_xy() { return x * y; }
 
+private:
+    int x = 0;
+    int y = 0;
+    int aim = 0;
 };

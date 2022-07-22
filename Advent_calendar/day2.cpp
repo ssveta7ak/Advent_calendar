@@ -1,16 +1,32 @@
 #include "day2.h"
 
+void Submarine::move(std::string direction, int step)
+{
+    if (direction == "forward")
+    {
+        x += step;
+        y += aim * step;
+    }
+    if (direction == "down")
+    {
+        aim += step;
+
+    }
+    if (direction == "up")
+    {
+        aim -= step;
+    }
+}
+
 void Submarine::read_input()
 {
-    std::ifstream infile("day2_input.txt");
-    std::string line;
+    std::ifstream infile("input/day2_input.txt");
+    std::string direction;
     int step = 0;
     
-    while (infile >> line >> step)
+    while (infile >> direction >> step)
     {
-        std::cout << line;
-        std::cout << step << "\n";
-        
+        move(direction, step);
     }
-    
+    std::cout << get_multiplication_xy() << "\n";
 }
