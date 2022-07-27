@@ -29,4 +29,5 @@ void Submarine::read_input()
         move(direction, step);
     }
     std::cout << get_multiplication_xy() << "\n";
+    infile.close();
 }

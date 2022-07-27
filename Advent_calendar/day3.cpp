@@ -21,6 +21,7 @@ void get_gamma_epsilon()
                 zeros[i] += 1;
         }
     }
+    infile.close();
 
     for (int i = 0; i < ones.size(); i++)
     {
@@ -102,6 +103,7 @@ void get_life_support_rating()
     {
         numbers.push_back(number);
     }
+    infile.close();
 
     std::vector<int> commons = get_commons_bits(numbers);
     for (int i = 0; i < commons.size(); i++)
